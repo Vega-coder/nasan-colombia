@@ -76,15 +76,15 @@ export default function Hero() {
             <div className="pointer-events-none absolute -left-20 bottom-0 h-72 w-72 rounded-full bg-cyan-600/15 blur-3xl" />
             <div className="pointer-events-none absolute inset-0 bg-[radial-gradient(#008C99_1px,transparent_1px)] [background-size:24px_24px] opacity-15" />
 
-            <div className="container-luxe relative grid min-h-[460px] items-center gap-8 py-10 md:grid-cols-2 md:py-16">
+            <div className="container-luxe relative grid min-h-0 md:min-h-[460px] items-center gap-4 sm:gap-8 py-6 sm:py-10 md:grid-cols-2 md:py-16">
                 {/* Columna de texto e identidad oficial */}
                 <div className="animate-fade-up z-10">
-                    <div className="inline-flex items-center gap-2 rounded-full border border-teal-500/40 bg-teal-500/10 px-3.5 py-1 text-xs font-semibold uppercase tracking-wider text-teal-300 backdrop-blur-md">
+                    <div className="inline-flex items-center gap-1.5 rounded-full border border-teal-500/40 bg-teal-500/10 px-2.5 py-0.5 text-[10px] sm:text-xs sm:px-3.5 sm:py-1 font-semibold uppercase tracking-wider text-teal-300 backdrop-blur-md">
                         <HiCheckBadge className="h-4 w-4 text-cyan-400" />
                         <span>Distribuidor Oficial Colombia · By: Jordan Duran</span>
                     </div>
 
-                    <h1 className="mt-4 font-display text-3xl font-extrabold uppercase leading-[1.1] tracking-tight sm:text-4xl md:text-5xl lg:text-[54px]">
+                    <h1 className="mt-3 font-display text-2xl font-extrabold uppercase leading-[1.1] tracking-tight sm:text-4xl md:text-5xl lg:text-[54px]">
                         Maquinaria &{' '}
                         <span className="text-transparent bg-clip-text bg-gradient-to-r from-teal-400 via-cyan-300 to-teal-500">
                             Herramientas
@@ -94,7 +94,7 @@ export default function Hero() {
                     </h1>
 
                     {/* Slogan oficial destacado */}
-                    <div className="mt-4 flex flex-wrap items-center gap-2 font-display text-xs sm:text-sm font-bold tracking-[0.2em] text-slate-300 uppercase">
+                    <div className="mt-2 sm:mt-4 flex flex-wrap items-center gap-2 font-display text-[10px] sm:text-sm font-bold tracking-[0.2em] text-slate-300 uppercase">
                         <span className="text-teal-400">HERRAMIENTAS</span>
                         <span className="text-slate-600">•</span>
                         <span className="text-cyan-300">INSUMOS</span>
@@ -102,28 +102,28 @@ export default function Hero() {
                         <span className="text-teal-400">BATERÍAS</span>
                     </div>
 
-                    <p className="mt-4 max-w-lg text-sm sm:text-base leading-relaxed text-slate-300">
+                    <p className="mt-2 sm:mt-4 max-w-lg text-xs sm:text-base leading-relaxed text-slate-300 line-clamp-3 sm:line-clamp-none">
                         Equipa tu laboratorio con la tecnología de prensado, laminado 3D, autoclaves y desensamble más confiable de la industria. Respaldado por <strong>Jordan Duran</strong> con garantía directa.
                     </p>
 
-                    <div className="mt-8 flex flex-wrap items-center gap-4">
+                    <div className="mt-4 sm:mt-8 flex flex-wrap items-center gap-2 sm:gap-4">
                         <Link
                             to="/tienda"
-                            className="inline-flex items-center gap-2 rounded-md bg-gradient-to-r from-teal-500 to-cyan-500 px-6 py-3.5 font-display text-xs font-bold uppercase tracking-wider text-slate-950 transition-all duration-300 hover:from-teal-400 hover:to-cyan-400 hover:shadow-lg hover:shadow-teal-500/30 hover:scale-105 active:scale-95"
+                            className="inline-flex items-center gap-2 rounded-md bg-gradient-to-r from-teal-500 to-cyan-500 px-4 py-2.5 sm:px-6 sm:py-3.5 font-display text-[10px] sm:text-xs font-bold uppercase tracking-wider text-slate-950 transition-all duration-300 hover:from-teal-400 hover:to-cyan-400 hover:shadow-lg hover:shadow-teal-500/30 hover:scale-105 active:scale-95"
                         >
                             Ver Catálogo Completo <HiArrowLongRight className="h-4 w-4" />
                         </Link>
                         <a
-                            href="https://wa.me/573001234567?text=Hola%20NASAN%20Colombia,%20quisiera%20asesor%C3%ADa%20sobre%20la%20maquinaria"
+                            href="https://wa.me/573123917729?text=Hola%20NASAN%20Colombia,%20quisiera%20asesor%C3%ADa%20sobre%20la%20maquinaria"
                             target="_blank"
                             rel="noopener noreferrer"
-                            className="inline-flex items-center gap-2 rounded-md border border-slate-700 bg-slate-800/80 px-5 py-3.5 font-display text-xs font-semibold uppercase tracking-wider text-slate-200 transition hover:bg-slate-700 hover:text-white"
+                            className="inline-flex items-center gap-2 rounded-md border border-slate-700 bg-slate-800/80 px-3 py-2.5 sm:px-5 sm:py-3.5 font-display text-[10px] sm:text-xs font-semibold uppercase tracking-wider text-slate-200 transition hover:bg-slate-700 hover:text-white"
                         >
                             Asesoría WhatsApp
                         </a>
                     </div>
 
-                    <div className="mt-8 grid grid-cols-3 gap-3 border-t border-slate-800/80 pt-6 text-xs text-slate-400">
+                    <div className="mt-4 sm:mt-8 grid grid-cols-3 gap-2 sm:gap-3 border-t border-slate-800/80 pt-4 sm:pt-6 text-[10px] sm:text-xs text-slate-400">
                         <div className="flex items-center gap-1.5">
                             <HiShieldCheck className="h-4 w-4 text-teal-400 shrink-0" />
                             <span>1 Año Garantía</span>
@@ -142,7 +142,7 @@ export default function Hero() {
                 {/* Columna de la máquina dinámica 3D */}
                 <div className="relative flex flex-col items-center justify-center">
                     <div
-                        className="relative flex h-72 w-full items-end justify-center sm:h-80 md:h-[380px] lg:h-[420px]"
+                        className="relative flex h-48 w-full items-end justify-center sm:h-80 md:h-[380px] lg:h-[420px]"
                         onMouseMove={handleMouseMove}
                         onMouseLeave={handleMouseLeave}
                     >
@@ -179,11 +179,11 @@ export default function Hero() {
                                                 : 'opacity-0 scale-90 translate-y-4 pointer-events-none z-0'
                                         }`}
                                     >
-                                        <div className="relative max-h-[280px] sm:max-h-[320px] md:max-h-[350px] w-auto">
+                                        <div className="relative max-h-[180px] sm:max-h-[320px] md:max-h-[350px] w-auto">
                                             <img
                                                 src={machine.image}
                                                 alt={machine.name}
-                                                className="max-h-[260px] sm:max-h-[300px] md:max-h-[330px] w-auto object-contain drop-shadow-[0_20px_40px_rgba(0,140,153,0.35)] transition-transform duration-500 hover:scale-105"
+                                                className="max-h-[160px] sm:max-h-[300px] md:max-h-[330px] w-auto object-contain drop-shadow-[0_20px_40px_rgba(0,140,153,0.35)] transition-transform duration-500 hover:scale-105"
                                             />
                                         </div>
                                     </Link>
