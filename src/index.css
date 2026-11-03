@@ -1,0 +1,89 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+    html {
+        scroll-behavior: smooth;
+    }
+    body {
+        @apply bg-cream-light font-sans text-ink antialiased;
+    }
+    h1, h2, h3, h4 {
+        @apply font-display;
+    }
+    ::selection {
+        @apply bg-gold/30;
+    }
+}
+
+@layer components {
+    /* Texto pequeño en mayúsculas espaciadas, firma visual de la marca */
+    .eyebrow {
+        @apply font-sans text-[11px] font-medium uppercase tracking-luxe;
+    }
+    .text-gold-gradient {
+        @apply bg-gold-gradient bg-clip-text text-transparent;
+    }
+    /* Animaciones y micro-interacciones de botones de lujo */
+    .btn {
+        @apply relative inline-flex items-center justify-center gap-2 overflow-hidden px-6 py-3 text-[11px] font-semibold uppercase tracking-[0.2em] select-none transition-all duration-300 ease-out active:scale-[0.97] active:duration-75 disabled:pointer-events-none disabled:cursor-not-allowed disabled:opacity-50 disabled:transform-none disabled:shadow-none;
+    }
+    /* Efecto de destello de luz (shimmer) en hover */
+    .btn::before {
+        content: '';
+        position: absolute;
+        top: 0;
+        left: -130%;
+        width: 60%;
+        height: 100%;
+        background: linear-gradient(
+            90deg,
+            transparent,
+            rgba(255, 255, 255, 0.22),
+            transparent
+        );
+        transform: skewX(-20deg);
+        pointer-events: none;
+        transition: none;
+    }
+    .btn:hover::before {
+        left: 150%;
+        transition: left 0.75s cubic-bezier(0.4, 0, 0.2, 1);
+    }
+    .btn svg {
+        @apply transition-transform duration-300 ease-out;
+    }
+    .btn:hover svg {
+        @apply scale-110 -translate-y-px;
+    }
+    .btn-dark {
+        @apply btn bg-ink text-cream-light hover:bg-ink-muted hover:shadow-lg hover:shadow-ink/25 hover:-translate-y-0.5;
+    }
+    .btn-gold {
+        @apply btn bg-gold text-ink hover:bg-gold-light hover:shadow-lg hover:shadow-gold/30 hover:-translate-y-0.5;
+    }
+    .btn-outline {
+        @apply btn border border-ink/80 text-ink hover:border-ink hover:bg-ink hover:text-cream-light hover:shadow-md hover:-translate-y-0.5;
+    }
+    .btn-outline-light {
+        @apply btn border border-cream/60 text-cream-light hover:bg-cream-light hover:text-ink hover:shadow-md hover:-translate-y-0.5;
+    }
+    .input {
+        @apply w-full border border-taupe/30 bg-white px-4 py-3 text-sm outline-none transition placeholder:text-taupe-light focus:border-gold focus:ring-1 focus:ring-gold;
+    }
+    .gold-rule {
+        @apply h-px w-16 bg-gold-gradient;
+    }
+    .container-luxe {
+        @apply mx-auto w-full max-w-7xl px-4 sm:px-6 lg:px-8;
+    }
+    /* Ocultar barra de desplazamiento sin perder el scroll táctil */
+    .no-scrollbar::-webkit-scrollbar {
+        display: none;
+    }
+    .no-scrollbar {
+        -ms-overflow-style: none;
+        scrollbar-width: none;
+    }
+}
