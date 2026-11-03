@@ -27,13 +27,13 @@ export const KNOWN_BRAND_INFO = {
         tagline: 'Garantía oficial y soporte técnico especializado',
         description: 'Línea oficial respaldada por Jordan Duran (@nasancolombia) con asesoría técnica personalizada, repuestos originales garantizados y envíos asegurados a todo el territorio colombiano.',
     },
-    'lattafa': {
-        name: 'Lattafa',
-        slug: 'lattafa',
-        country: 'Dubai, Emiratos Árabes Unidos',
-        founded: '1980',
-        tagline: 'Lujo oriental accesible y proyección legendaria',
-        description: 'Lattafa Perfumes es una de las casas de perfumería más prestigiosas y reconocidas de los Emiratos Árabes Unidos.',
+    'saisebmer': {
+        name: 'Saisebmer',
+        slug: 'saisebmer',
+        country: 'Colombia',
+        founded: '2019',
+        tagline: 'Distribuidor Oficial NASAN en Colombia',
+        description: 'Distribuidor autorizado de tecnología, repuestos y laboratorio especializado.',
     },
 };
 
@@ -46,7 +46,7 @@ export const getBrandMetadata = (brandNameOrSlug = '') => {
     return {
         name: cleanName,
         slug: slug || 'nasan',
-        country: 'Emiratos Árabes Unidos',
+        country: 'Colombia / China',
         founded: '2020',
         tagline: 'Herramientas y equipamiento de alta precisión',
         description: `${cleanName} ofrece soluciones técnicas para talleres y laboratorios de reparación móvil con los más altos estándares de calidad y durabilidad.`,

@@ -38,7 +38,7 @@ export default function CartDrawer() {
                 {items.length === 0 ? (
                     <div className="flex flex-1 flex-col items-center justify-center gap-4 px-6 text-center">
                         <p className="font-display text-xl">Tu carrito está vacío</p>
-                        <p className="text-sm text-taupe">Descubre la fragancia que te define.</p>
+                        <p className="text-sm text-slate-500">Equipa tu laboratorio con la mejor maquinaria y repuestos.</p>
                         <Link to="/tienda" onClick={close} className="btn-dark mt-2">Ver colección</Link>
                     </div>
                 ) : (

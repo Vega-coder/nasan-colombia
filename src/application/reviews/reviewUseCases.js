@@ -30,8 +30,8 @@ export const makeSubmitProductReview = ({ reviewRepository, authGateway }) => as
         rating,
         comment: cleanComment,
         city: reviewData?.city || 'Colombia',
-        title: reviewData?.title?.trim() || 'Excelente fragancia',
-        longevity: reviewData?.longevity || 'Más de 10 horas',
+        title: reviewData?.title?.trim() || 'Excelente equipo',
+        longevity: reviewData?.longevity || 'Rendimiento profesional',
         sillage: reviewData?.sillage || 'Pesada',
     });
 };

@@ -63,8 +63,8 @@ export default function CartUpsell() {
                     <p className="text-[10px] font-bold uppercase tracking-[0.18em] text-gold-dark">
                         ✨ Complementa tu compra
                     </p>
-                    <p className="text-[11px] text-taupe">
-                        Añade una muestra o fragancia para acompañar tu pedido
+                    <p className="text-[11px] text-slate-500">
+                        Añade consumibles o herramientas para acompañar tu orden
                     </p>
                 </div>
             </div>

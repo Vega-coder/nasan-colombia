@@ -109,7 +109,7 @@ export default function ProductGallery({ product }) {
                     <div
                         className="flex w-16 sm:w-20 shrink-0 flex-col gap-2.5 max-h-[460px] overflow-y-auto no-scrollbar py-0.5"
                         role="tablist"
-                        aria-label="Vistas del perfume"
+                        aria-label="Vistas del producto"
                     >
                         {images.map((item, idx) => {
                             const isSelected = idx === selectedIndex;

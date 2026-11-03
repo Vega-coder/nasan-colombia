@@ -1,6 +1,7 @@
 // Composition root: único lugar donde se eligen las implementaciones concretas
 // y se inyectan en los casos de uso. La UI solo importa `useCases` / `adminUseCases` desde aquí.
 import { supabase, isSupabaseConfigured } from './supabase/client.js';
+import { SEED_PRODUCTS } from './data/seedProducts.js';
 import { createInMemoryProductRepository } from './repositories/inMemoryProductRepository.js';
 import { createLocalOrderRepository } from './repositories/localOrderRepository.js';
 import { createSupabaseProductRepository } from './repositories/supabaseProductRepository.js';
@@ -38,37 +39,45 @@ import { makeSubmitProductReview } from '@/application/reviews/reviewUseCases.js
 
 const env = import.meta.env ?? {};
 
-// Número oficial de atención al cliente de Aroma Premium (+57 314 616 0642).
-// Descarta y neutraliza cualquier valor placeholder o dummy (como 573000000000) configurado previamente en variables de entorno de Vercel.
+// WhatsApp oficial de atención al cliente de NASAN Colombia / Saisebmer (+57 312 391 7729).
 const envPhone = String(env.VITE_STORE_WHATSAPP || '').trim().replace(/\D/g, '');
 export const STORE_WHATSAPP = (!envPhone || envPhone.includes('3000000000') || envPhone === '573000000000' || envPhone === '3000000000' || envPhone.startsWith('573000'))
-    ? '573146160642'
+    ? '573123917729'
     : (envPhone.startsWith('57') ? envPhone : `57${envPhone}`);
 export const isDemoMode = !isSupabaseConfigured;
 export const isAutoShippingEnabled = env.VITE_SHIPPING_AUTO_GENERATE !== 'false';
 export const defaultCarrierId = env.VITE_SHIPPING_DEFAULT_CARRIER || 'coordinadora';
 
-// Credenciales del panel en modo demo (ver .env.example). Con Supabase se usa Supabase Auth.
+// Credenciales del panel en modo demo (ver .env.example).
 export const DEMO_ADMIN = Object.freeze({
-    email: env.VITE_DEMO_ADMIN_EMAIL || 'admin@aromapremium.test',
-    password: env.VITE_DEMO_ADMIN_PASSWORD || 'AromaDemo2026!',
+    email: env.VITE_DEMO_ADMIN_EMAIL || 'admin@nasancolombia.co',
+    password: env.VITE_DEMO_ADMIN_PASSWORD || 'NasanDemo2026!',
 });
 
-if (isDemoMode) {
-    console.info('[Aroma Premium] Supabase no configurado.');
-} else if (typeof window !== 'undefined') {
-    // Limpia cualquier catálogo viejo guardado en el navegador
+// Limpieza proactiva de almacenamiento local para garantizar 0 residuos de lociones o perfumes
+if (typeof window !== 'undefined') {
     try {
-        localStorage.removeItem('ap_products');
-        localStorage.removeItem('ap_cart');
+        const legacyKeys = [
+            'ap_products',
+            'ap_products_v2',
+            'ap_cart',
+            'ap_wishlist',
+            'ap_recently_viewed',
+            'ap_chatbot_history_v2',
+            'nasan_products',
+            'nasan_products_v2',
+            'nasan_products_v3',
+            'nasan_products_v4',
+        ];
+        legacyKeys.forEach((key) => localStorage.removeItem(key));
+        sessionStorage.removeItem('ap_chatbot_history_v2');
     } catch {
         // Ignorar si el almacenamiento está restringido en modo incógnito
     }
 }
 
-const productRepository = isDemoMode
-    ? createInMemoryProductRepository([], globalThis.localStorage)
-    : createSupabaseProductRepository(supabase);
+// Catálogo quemado oficial de tecnología NASAN Colombia (Maquinaria, Herramientas, Insumos y Baterías iPhone)
+const productRepository = createInMemoryProductRepository(SEED_PRODUCTS, globalThis.localStorage);
 
 let generateShippingGuideFn;
 

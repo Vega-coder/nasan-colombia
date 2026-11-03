@@ -5,7 +5,7 @@ import { toast } from '@/presentation/utils/swal.js';
 // Adaptador: guarda el estado del carrito en React + localStorage y delega
 // todas las reglas (stock, máximos, envío) al dominio.
 
-const STORAGE_KEY = 'ap_cart';
+const STORAGE_KEY = 'nasan_cart';
 const CartContext = createContext(null);
 
 export const useCart = () => {

@@ -22,15 +22,17 @@ const DISPLAY_AROMAS = DISPLAY_AROMAS_ORDER
     .filter(Boolean);
 
 const GENDER_OPTIONS = [
-    { id: GENDER.WOMEN, label: 'Mujer' },
-    { id: GENDER.MEN, label: 'Hombre' },
-    { id: GENDER.UNISEX, label: 'Unisex' },
+    { id: 'maquinaria', label: 'Maquinaria' },
+    { id: 'herramientas', label: 'Herramientas' },
+    { id: 'insumos', label: 'Insumos' },
+    { id: 'baterias', label: 'Baterías' },
 ];
 
 const TYPE_OPTIONS = [
-    { id: PRODUCT_TYPE.FRAGRANCE, label: 'Fragancia' },
-    { id: PRODUCT_TYPE.GIFT_SET, label: 'Set de regalo' },
-    { id: PRODUCT_TYPE.ACCESSORY, label: 'Accesorio' },
+    { id: 'maquinaria', label: 'Maquinaria' },
+    { id: 'herramientas', label: 'Herramientas' },
+    { id: 'insumos', label: 'Insumos' },
+    { id: 'baterias', label: 'Baterías' },
 ];
 
 function Field({ label, error, children, className = '' }) {
@@ -99,13 +101,13 @@ export default function ProductForm({ values, errors, brands, onChange, onSubmit
                             <textarea rows={4} value={values.description} onChange={set('description')} className="input resize-y" />
                         </Field>
 
-                        {/* Familias Olfativas / Aromas */}
-                        <div className="sm:col-span-2 mt-1 rounded-xl border border-gold/30 bg-gold/[0.04] p-4">
+                        {/* Especialidades Técnicas */}
+                        <div className="sm:col-span-2 mt-1 rounded-xl border border-teal-500/30 bg-teal-500/[0.04] p-4">
                             <div className="mb-3 flex flex-wrap items-center justify-between gap-2">
                                 <div>
-                                    <p className="eyebrow text-gold-dark font-bold">Familias Olfativas (Categorías Aromáticas)</p>
-                                    <p className="text-[11px] text-taupe mt-0.5">
-                                        Selecciona una o más familias para vincular este perfume con las categorías del inicio y filtros de la tienda.
+                                    <p className="eyebrow text-teal-600 font-bold">Especialidades Técnicas y Aplicaciones</p>
+                                    <p className="text-[11px] text-slate-500 mt-0.5">
+                                        Selecciona una o más áreas para vincular este equipo con las secciones y filtros de la tienda.
                                     </p>
                                 </div>
                                 {(values.aromas || []).length > 0 && (

@@ -108,8 +108,8 @@ export const calculatePackageSpecs = (order = {}) => {
 
     // Descripción del contenido
     const contentDescription = items.length > 0
-        ? items.map((i) => `${i.quantity}x ${i.brand || ''} ${i.name || 'Perfume'}`.trim()).join(', ')
-        : 'Fragancias y perfumería fina';
+        ? items.map((i) => `${i.quantity}x ${i.brand || ''} ${i.name || 'Herramienta/Equipo'}`.trim()).join(', ')
+        : 'Herramientas, insumos y repuestos de tecnología';
 
     // Valor declarado (por defecto el total del pedido)
     const declaredValue = Number(order.total) || Number(order.subtotal) || 100000;

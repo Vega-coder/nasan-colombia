@@ -76,7 +76,7 @@ export default function ProductCard({ product }) {
                     {isFav ? <HiHeart className="h-4 w-4 text-ink" /> : <HiOutlineHeart className="h-4 w-4" />}
                 </button>
 
-                {/* Notas olfativas reveladas sutilmente al hacer hover */}
+                {/* Especificaciones clave reveladas sutilmente al hacer hover */}
                 {product.notes?.length > 0 && (
                     <div className="pointer-events-none absolute inset-x-2 bottom-2 z-10 flex justify-center opacity-0 translate-y-2 transition-all duration-300 group-hover:opacity-100 group-hover:translate-y-0">
                         <span className="rounded-full bg-ink/85 px-2.5 py-1 text-[9px] font-medium text-gold-light backdrop-blur-md shadow-md text-center truncate max-w-[90%]">

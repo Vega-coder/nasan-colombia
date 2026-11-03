@@ -2,7 +2,7 @@ import { useState, useEffect } from 'react';
 import SectionHeading from '@/presentation/components/ui/SectionHeading.jsx';
 import ProductGrid from '@/presentation/components/product/ProductGrid.jsx';
 
-const STORAGE_KEY = 'ap_recently_viewed';
+const STORAGE_KEY = 'nasan_recently_viewed';
 const MAX_STORED = 10;
 
 export default function RecentlyViewed({ currentProduct }) {

@@ -45,7 +45,7 @@ export function buildShippingLabelHtml({ order, shippingData, sender }) {
         weightKg: 1,
         dimensions: '15x15x15 cm',
         declaredValue: order.total || 0,
-        content: 'Fragancias y perfumería fina',
+        content: 'Herramientas y repuestos de tecnología',
     };
 
     const dateFormatted = new Date().toLocaleDateString('es-CO', {
@@ -280,10 +280,10 @@ export function buildShippingLabelHtml({ order, shippingData, sender }) {
                 </div>
             </div>
             <div style="font-size: 10px; margin-top: 4px;">
-                <strong>Contenido:</strong> ${specs.content || 'Fragancias y perfumería'}
+                <strong>Contenido:</strong> ${specs.content || 'Equipos y herramientas de tecnología'}
             </div>
             <div class="fragile-banner">
-                ⚠️ FRÁGIL · CONTIENE LÍQUIDOS EN FRASCO DE VIDRIO · NO GOLPEAR
+                ⚠️ EQUIPO ELECTRÓNICO Y DE PRECISIÓN · MANEJAR CON CUIDADO
             </div>
         </div>
 

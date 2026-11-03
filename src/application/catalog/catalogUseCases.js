@@ -55,8 +55,8 @@ export const makeGetHomeShowcase = ({ productRepository }) =>
         const all = await productRepository.findAll();
         const featured = all.filter((p) => p.isFeatured);
         return {
-            featured: (featured.length ? featured : all).slice(0, 8),
-            newArrivals: sortProducts(all.filter((p) => p.isNew), 'newest').slice(0, 4),
+            featured: featured.length ? featured : all,
+            newArrivals: sortProducts(all.filter((p) => p.isNew), 'newest').slice(0, 8),
             brands: getAvailableBrandsByPopularity(all),
         };
     };

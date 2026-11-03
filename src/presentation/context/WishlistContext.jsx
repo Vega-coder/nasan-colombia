@@ -1,7 +1,7 @@
 import { createContext, useCallback, useContext, useEffect, useMemo, useState } from 'react';
 import { toast } from '@/presentation/utils/swal.js';
 
-const STORAGE_KEY = 'ap_wishlist';
+const STORAGE_KEY = 'nasan_wishlist';
 const WishlistContext = createContext(null);
 
 export const useWishlist = () => {

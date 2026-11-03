@@ -111,7 +111,7 @@ function ProductView({ product, related }) {
                                             key={slug}
                                             to={`/tienda?aroma=${slug}`}
                                             className="inline-flex items-center gap-1.5 rounded-full border border-gold/40 bg-gold/10 px-3 py-1 text-xs font-semibold text-gold-dark transition duration-200 hover:bg-gold hover:text-white hover:border-gold"
-                                            title={`Ver fragancias ${aroma.name}`}
+                                            title={`Ver productos ${aroma.name}`}
                                         >
                                             <span className="h-1.5 w-1.5 rounded-full bg-gold" />
                                             {aroma.name}
@@ -265,7 +265,7 @@ function ProductView({ product, related }) {
             {/* 2. Productos Relacionados */}
             {related.length > 0 && (
                 <section className="container-luxe py-16 sm:py-20 border-t border-taupe/15">
-                    <SectionHeading eyebrow="También te puede gustar" title="Fragancias relacionadas" />
+                    <SectionHeading eyebrow="También te puede interesar" title="Equipos y repuestos relacionados" />
                     <ProductGrid products={related} columns="lg:grid-cols-4" />
                 </section>
             )}
